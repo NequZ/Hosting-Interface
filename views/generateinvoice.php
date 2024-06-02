@@ -83,16 +83,4 @@ if (isset($_GET['id'])) {
     exit;
 }
 
-function logInvoiceGenerate($conn, $invoiceid, $serviceid, $username, $action) {
-    try {
-        $stmt = $conn->prepare("INSERT INTO nw_log_invoice_generate (invoiceid, serviceid, username, action, date) VALUES (:invoiceid, :serviceid, :username, :action, NOW())");
-        $stmt->bindParam(':invoiceid', $invoiceid);
-        $stmt->bindParam(':serviceid', $serviceid);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':action', $action);
-        $stmt->execute();
-    } catch (PDOException $e) {
-        echo "Error logging invoice generation: " . $e->getMessage();
-    }
-}
 ?>
