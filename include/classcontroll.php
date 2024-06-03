@@ -34,6 +34,18 @@ if ($configController->isDebugMode()) {
 }
 
 // Function to fetch and display users with privileges higher than 0
+
+function fetchUsersPrivilegeWithUserID($conn, $userid) {
+    try {
+        $stmt = $conn->prepare("SELECT privilege FROM nw_users_privileges WHERE userid = :userid");
+        $stmt->bindParam(':userid', $userid);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return null;
+    }
+}
 function fetchUsersWithPrivileges($conn) {
     try {
         // Query to get all users
@@ -315,4 +327,29 @@ function logInvoiceGenerate($conn, $invoiceid, $serviceid, $username, $action) {
         echo "Error logging invoice generation: " . $e->getMessage();
     }
 }
+
+
+function fetchUsers($conn) {
+    try {
+        $stmt = $conn->prepare("SELECT id, username, email, verified, login, created FROM nw_users");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return [];
+    }
+}
+
+function getUserWithID($conn, $userId) {
+    try {
+        $stmt = $conn->prepare("SELECT id, username, email, verified, login, created FROM nw_users WHERE id = :user_id");
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        return null;
+    }
+}
+
 ?>

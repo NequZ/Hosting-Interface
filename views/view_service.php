@@ -35,35 +35,8 @@ if (isset($_GET['id'])) {
     echo "No service ID provided.";
     exit;
 }
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <title>Soft UI Dashboard by Creative Tim</title>
-    <!-- Fonts and icons -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Font Awesome 4.7.0 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- CSS Files -->
-    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
-</head>
-
-<body class="g-sidenav-show bg-gray-100">
-
-<?php include '../include/sidebar.php'; ?>
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <!-- Navbar -->
-    <?php include '../include/navbar.php'; ?>
-    <!-- End Navbar -->
+ include '../include/head.php'; ?>
 
     <div class="container-fluid py-4">
         <div class="row">
@@ -186,8 +159,10 @@ if (isset($_GET['id'])) {
                                 </div>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <p>No invoices found for this service!</p>
-                            <p>A Invoice is needed for a correct billing process.</p>
+                            <div class="alert alert-danger" role="alert">
+                                <span class="alert-icon"><i class="fas fa-thumbs-down"></i></span>
+                                <strong>No invoices found for this service!</strong> A Invoice is needed for a correct billing process
+                            </div>
                         <button class="btn btn-primary" onclick="window.location.href='add_invoice.php?serviceid=<?php echo $service['serviceid']; ?>'">Add Invoice</button>
                         <?php endif; ?>
                     </div>

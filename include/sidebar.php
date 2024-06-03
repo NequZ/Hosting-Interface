@@ -50,6 +50,26 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="usermanagement.php">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <svg width="12px" height="12px" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>User</title>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g transform="translate(1716.000000, 291.000000)">
+                                        <g transform="translate(153.000000, 2.000000)">
+                                            <path class="color-background" d="M21.5,0 C33.4264069,0 43,9.57359308 43,21.5 C43,33.4264069 33.4264069,43 21.5,43 C9.57359308,43 0,33.4264069 0,21.5 C0,9.57359308 9.57359308,0 21.5,0 Z M21.5,4 C13.5604312,4 7,10.5604312 7,18.5 C7,21.6401837 8.37293374,24.4127845 10.6561892,26.2433387 C11.4695701,26.9224272 11.8280086,28.0076325 11.5584765,29.0456808 L10.6232812,32.6025186 C13.7113229,34.6070413 17.5578678,35.8796765 21.5,35.8796765 C25.4421322,35.8796765 29.2886771,34.6070413 32.3767188,32.6025186 L31.4415235,29.0456808 C31.1719914,28.0076325 31.5304299,26.9224272 32.3438108,26.2433387 C34.6270663,24.4127845 36,21.6401837 36,18.5 C36,10.5604312 29.4395688,4 21.5,4 Z M21.5,10 C24.5375661,10 27,12.4624339 27,15.5 C27,18.5375661 24.5375661,21 21.5,21 C18.4624339,21 16,18.5375661 16,15.5 C16,12.4624339 18.4624339,10 21.5,10 Z M21.5,14 C20.6715729,14 20,14.6715729 20,15.5 C20,16.3284271 20.6715729,17 21.5,17 C22.3284271,17 23,16.3284271 23,15.5 C23,14.6715729 22.3284271,14 21.5,14 Z"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="nav-link-text ms-1">Users</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="servermanagement.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
