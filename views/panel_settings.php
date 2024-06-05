@@ -141,6 +141,23 @@ include '../include/head.php'; ?>
             </div>
         </div>
     </div>
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6><i class="fas fa-cog"></i> Notifications</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="notifications_settings.php" class="btn btn-primary">
+                                <i class="fas fa-check"></i> General Settings
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
 </main>
 
 <script>

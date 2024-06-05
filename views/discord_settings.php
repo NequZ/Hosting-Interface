@@ -7,8 +7,6 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-
-
 $config = include('../config.php');
 
 $discordEnabled = $config['discord']['enabled'];
@@ -25,6 +23,7 @@ if (!$discordEnabled) {
     <html lang="en">
     <head>
         <?php include '../include/head.php'; ?>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
@@ -40,7 +39,6 @@ if (!$discordEnabled) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Status message will be inserted here -->
                     <p id="statusMessage">Checking status...</p>
                 </div>
                 <div class="modal-footer">
@@ -58,9 +56,6 @@ if (!$discordEnabled) {
                         <h6><i class="fas fa-cog"></i> General Discord Settings</h6>
                     </div>
                     <div class="card-body">
-                        <a href="discord_security_settings.php" class="btn btn-primary"><i class="fas fa-shield-alt"></i>
-                            Discord Security Settings
-                        </a>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#statusModal">
                             <i class="fas fa-check"></i> Check Discord Status
                         </button>
@@ -69,7 +64,29 @@ if (!$discordEnabled) {
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-secondary" role="alert">
+                    <span class="alert-icon"><i class="fas fa-info-circle"></i></span>
+                    <strong>Info:</strong> To start the Discord bot, please follow these steps:
+                    <ul>
+                        <li>Ensure the bot is properly configured. Check the <code>nequz_bot.py</code> file.</li>
+                        <li>Open your terminal or command prompt.</li>
+                        <li>Navigate to the directory where your bot is located.</li>
+                        <li>For example: <code>cd /etc/nequz_bot.py</code></li>
+                        <li>Run the command: <code>python3 nequz_bot.py</code></li>
+                        <li>Check the status of the bot by clicking the button above.</li>
+                    </ul>
+                    <br>
+                    <strong>Example command to install python3, pip, and discord.py:</strong>
+                    <pre><code>sudo apt-get update && sudo apt-get install -y python3 python3-pip && pip3 install discord.py</code></pre>
+                </div>
+            </div>
+        </div>
+        <!-- End of Info Text Section -->
+
         <!-- Additional Section 1 -->
+        <!--
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
@@ -77,50 +94,21 @@ if (!$discordEnabled) {
                         <h6><i class="fas fa-user"></i> User Management</h6>
                     </div>
                     <div class="card-body">
-                        <!-- Add user management settings or details here -->
+
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Additional Section 2 -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6><i class="fas fa-shield-alt"></i> Security Settings</h6>
-                    </div>
-                    <div class="card-body">
-                        <!-- Add security settings or details here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Additional Section 3 -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6><i class="fas fa-bell"></i> Notification Settings</h6>
-                    </div>
-                    <div class="card-body">
-                        <!-- Add notification settings or details here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        $(document).ready(function() {
-            $('#statusModal').on('show.bs.modal', function (event) {
-                $.post('../controllers/CheckDiscordStatusController.php', function(data) {
-                    $('#statusMessage').html(data);
+        -->
+        <script>
+            $(document).ready(function() {
+                $('#statusModal').on('show.bs.modal', function (event) {
+                    $.post('../controllers/CheckDiscordStatusController.php', function(data) {
+                        $('#statusMessage').html(data);
+                    });
                 });
             });
-        });
-    </script>
+        </script>
     </body>
     </html>
     <?php
